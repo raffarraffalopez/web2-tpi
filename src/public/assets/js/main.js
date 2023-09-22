@@ -89,7 +89,7 @@ async function game() {
         badgeTime.innerHTML = `${(tiempoTotal / 1000).toFixed(2)} Tiempo`;
     }
     async function correrRonda() {
-        if (count < 4) {
+        if (count < 10) {
             setBoton(false);
             await mostrarPregunta(preguntas[count]);
             const inicioPregunta = performance.now();
