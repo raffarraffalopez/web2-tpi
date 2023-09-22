@@ -324,11 +324,11 @@ dialog #logo {
 }
 
 
-.blue-button:hover {
+.blue-button:hover,
+.blue-button:active {
     background-color: var(--color-over);
     transform: scale(1.1);
 }
-
 .blue-button:disabled {
     background-color: var(--color-primario);
     cursor: default;
