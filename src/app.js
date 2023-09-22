@@ -8,8 +8,6 @@ import connDb from './models/conexion.js';
 // importaciones  librerias propias
 import { DEBUG, CONFIG } from './config.js';
 import paisesModel from './models/paises_model.js';
-// DEBUG(paises);
-
 class App {
     constructor() {
         // server http
