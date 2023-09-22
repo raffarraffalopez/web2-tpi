@@ -22,16 +22,17 @@
                 </div>
                 <div class="image" id="logo"></div>
                 <div class="puntaje" id="puntaje">
-                    <p class="badge ok" id="pts">0 Pts </sup>
+                    <p class="badge ok" id="pts">0 Bien </sup>
                     <p class="badge bad" id="mal">0 Mal </sup>
-                    <p class="badge ok" id="time">0 Time </sup>
+                    <p class="badge ok" id="prom">0 Prom. </sup>
+                    <p class="badge ok" id="time">0 Total </sup>
                 </div>
             </div>
         </div>
         <div class="main bkg-traslucido" id="main">
             <button class="boton-inicio" value="jugar" id="jugar">Jugar</button>
             <button class="boton-inicio" value="ranking" id="ranking">Ranking</button>
-            <button class="boton-inicio" value="login" id="login">LOGIN</button>
+            <!-- <button class="boton-inicio" value="login" id="login">LOGIN</button> -->
         </div>
         <div class="main bkg-traslucido " id="juego">
             <div class="container-pregunta">
@@ -58,29 +59,42 @@
         </footer>
     </div>
 </body>
-<dialog id="aviso-bien" class="ok">
-    <h1>Sos un capo.</h1>
+<dialog id="aviso-bien" class="aviso ok">
+    <h2>Genio</h2>
+    <h3>Esa es la correcta</h3>
+
+</dialog>
+<dialog id="aviso-mal" class="aviso bad">
+    <h2>Incorrecta</h2>
+    <h3 id="correcta"></h3>
+</dialog>
+<dialog id="ranking aviso-resultado">
+    <h1>RANKING</h1>
+    <!-- <div class="image" id="logo"></div> -->
     <button onClick="this.parentElement.close()">Aceptar</button>
 </dialog>
-<dialog id="aviso-mal" class="bad">
-    <h1>Pa el orto.</h1>
-    <button onClick="this.parentElement.close()">Aceptar</button>
+<dialog id="form-registro">
+    <h1>Resultado</h1>
+    <p id="correctas">Cor</p>
+    <p id="incorrectas">Inc</p>
+    <p id="promedio">Por</p>
+    <p id="tiempo">Tim</p>
+
+    <div>
+        <input type="text" id="nombre" name="nombre" value="" placeholder="Ingrese su nombre">
+    </div>
+    </br>
+    <div>
+        <button type="button" class="blue-button box-shadow" id="registro">Enviar</button>
+    </div>
+    </br>
+    <div>
+        <button class="blue-button box-shadow" id="cancelar">Cancelar</button>
+    </div>
+    <!-- US5: Cuando termino de contestar las preguntas (10 en total), el sistema me brinda
+    información sobre la cantidad de preguntas respondidas correcta e incorrectamente, la
+    duración total de la partida y el tiempo promedio tardado en responder cada pregunta. -->
 </dialog>
-<dialog id="aviso-resultado">
-    <div class="image" id="logo"></div>
-    <button onClick="this.parentElement.close()">Aceptar</button>
-</dialog>
-<dialog id="aviso-registro">
-    <div class="image" id="logo"></div>
-    <h1>Formulario de Registro</h1>
-    <form id="registroForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        <input type="submit" value="Registrarse">
-    </form>
-    <button onClick="this.parentElement.close()">Aceptar</button>
-</dialog>
+
 
 </html>

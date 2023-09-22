@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "SET NODE_ENV=dev&& nodemon tpi.js",
-    "start:prod": "SET NODE_ENV=prod&& nodemon tpi.js"
+    "start:prod": "SET NODE_ENV=prod&& nodemon tpi.js",
+    "start": "SET NODE_ENV=prod&& nodemon tpi.js"
   },
   "dependencies": {
     "compression": "^1.7.4",

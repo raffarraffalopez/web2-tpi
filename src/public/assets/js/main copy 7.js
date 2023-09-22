@@ -37,14 +37,26 @@ async function game() {
     const nombreRegistro = document.getElementById('nombre');
     botonRegistro.addEventListener('click', () => {
         userJuegoData.name = nombreRegistro.value;
-        //registrarGame();
-        juego.guardarJuego(userJuegoData);
+        debug(JSON.stringify(userJuegoData));
         formularioRegistro.close();
         game();
     });
     botonCancelar.addEventListener('click', () => {
+        //   debug(nombreRegistro);
+        //   debug(userJuegoData);
         formularioRegistro.close();
+        //        game();
     });
+    /*
+        const bot = document.querySelectorAll('button');
+        debug(bot);
+        for (let j = 0; j < bot.length; j++) {
+            bot[j].addEventListener("click", function (event) {
+                debug(nombreRegistro.value);
+                //        debug(event.target.value);
+            })
+        }
+    */
     puntajeContainer.classList.add('puntaje-visible')
     juegoContainer.classList.add('visible');
     const juego = new Juego();
@@ -55,6 +67,13 @@ async function game() {
         const respuestaCorrecta = (valorVerificar === respuestaUser);
         if (respuestaCorrecta) {
             puntosTotal++;
+            //           debug(tipoPregunta);
+            // debug(`user ${respuestaUser}`);
+            // debug(`server: ${respuestaServer}`);
+            // debug(`timpo: ${tiempoPregunta}`);
+            // debug(`total: ${puntosTotal}`);
+            // debug(`mal: ${preguntasMal}`);
+            // debug(`total: ${tiempoTotal}`);
             mostrarDatosPartido();
             dialogoAvisoBien.showModal();
             setTimeout(() => {
@@ -63,6 +82,13 @@ async function game() {
             }, 1000);
         } else {
             preguntasMal++;
+            //           debug(tipoPregunta);
+            // debug(`user ${respuestaUser}`);
+            // debug(`server: ${respuestaServer}`);
+            // debug(`timpo: ${tiempoPregunta}`);
+            // debug(`total: ${puntosTotal}`);
+            // debug(`mal: ${preguntasMal}`);
+            // debug(`total: ${tiempoTotal}`);
             mostrarDatosPartido();
             dialogoAvisoCorrecta.innerHTML = valorVerificar;
             dialogoAvisoMal.showModal();
@@ -103,7 +129,6 @@ async function game() {
             count++;
             mostrarDatosPartido();
         } else {
-            // fin partido
             userJuegoData.preguntas = userPreguntasRespondidas;
             userJuegoData.tiempoTotal = tiempoTotal;
             userJuegoData.puntosTotal = puntosTotal;
@@ -114,7 +139,6 @@ async function game() {
             mainContainer.classList.remove('invisible');
             juegoContainer.classList.add('invisible');
             juegoContainer.classList.remove('visible');
-
         }
     }
     async function capturaRespuesta() {
@@ -179,10 +203,6 @@ async function game() {
         pIncorrectas.innerHTML = `Preguntas Mal respondidas: ${preguntasMal}`;
         pPromedio.innerHTML = `Tiempo pormedio por pregutna ${(tiempoTotal / 1000 / count).toFixed(2)}`;
         pTiempo.innerHTML = `Tiempo total ${(tiempoTotal / 1000).toFixed(2)}`;
-    }
-    function registrarGame() {
-        debug(JSON.stringify(userJuegoData)
-        );
     }
 }
 function registro() {

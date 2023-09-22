@@ -62,5 +62,50 @@ class Juego {
         this.indice++;
         return this.preguntas[this.indice];
     }
+    async guardarJuego2(data) {
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        };
+
+        fetch("localhost:8090/game", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .then(re)
+            .catch(error => console.log('error', error));
+    }
+    async guardarJuego(data) {
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        try {
+
+            const response = await fetch(`${this.apiUrl}/game`, requestOptions);
+            //            const response = await fetch(`http://localhost:8090/game`, requestOptions);
+            if (!response.ok) {
+                throw new Error('La solicitud no pudo completarse correctamente.');
+            }
+            console.log(response);
+            const data = await response.json();
+            this.preguntas = data;
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
+            throw error;
+        }
+    }
 }
 export default Juego;
+/*
+            .then(response => response.json())
+            .then(data => {
+                console.log('Respuesta del servidor:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+*/

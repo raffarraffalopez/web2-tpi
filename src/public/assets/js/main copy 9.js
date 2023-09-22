@@ -37,8 +37,7 @@ async function game() {
     const nombreRegistro = document.getElementById('nombre');
     botonRegistro.addEventListener('click', () => {
         userJuegoData.name = nombreRegistro.value;
-        //registrarGame();
-        juego.guardarJuego(userJuegoData);
+        registrarGame();
         formularioRegistro.close();
         game();
     });
@@ -103,7 +102,6 @@ async function game() {
             count++;
             mostrarDatosPartido();
         } else {
-            // fin partido
             userJuegoData.preguntas = userPreguntasRespondidas;
             userJuegoData.tiempoTotal = tiempoTotal;
             userJuegoData.puntosTotal = puntosTotal;
@@ -114,7 +112,6 @@ async function game() {
             mainContainer.classList.remove('invisible');
             juegoContainer.classList.add('invisible');
             juegoContainer.classList.remove('visible');
-
         }
     }
     async function capturaRespuesta() {
@@ -180,10 +177,7 @@ async function game() {
         pPromedio.innerHTML = `Tiempo pormedio por pregutna ${(tiempoTotal / 1000 / count).toFixed(2)}`;
         pTiempo.innerHTML = `Tiempo total ${(tiempoTotal / 1000).toFixed(2)}`;
     }
-    function registrarGame() {
-        debug(JSON.stringify(userJuegoData)
-        );
-    }
+    function registrarGame() { debug(JSON.stringify(userJuegoData)); }
 }
 function registro() {
     //    const formRegistro = document.getElementById('form-registro');

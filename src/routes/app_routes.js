@@ -4,14 +4,14 @@ const appRoutes = Express.Router();
 
 /* GET */
 appRoutes.get('/', function (req, res, next) {
-    res.send('responder con GET game');
+    res.send('responder con GET gamevcx');
 });
 appRoutes.get('/preguntas', function (req, res, next) {
-
     res.send(`responder con GET preguntas ${CONFIG.PAISES_DATA[0].nombre} `);
 });
 /* POST */
-appRoutes.post('/', function (req, res, next) {
+appRoutes.post('/', function (req, res) {
+    console.log('14');
     res.send('responder con POST game');
 });
 appRoutes.post('/respuesta', function (req, res, next) {

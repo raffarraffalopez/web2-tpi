@@ -7,7 +7,6 @@ import connDb from './models/conexion.js';
 
 // importaciones  librerias propias
 import { DEBUG, CONFIG } from './config.js';
-
 import paisesModel from './models/paises_model.js';
 // DEBUG(paises);
 
@@ -25,7 +24,7 @@ class App {
         // this.app.get('/index', (req, res) => {            res.redirect('/');          });
         //app.get('/index', (req, res) => { res.sendFile('index.html', { root: './src/public' }); });
         this.app.use('/games', appRoutes);
-        this.app.use('/juego', gameRoutes);
+        this.app.use('/juego', gameRoutes); //TODO esta ruta maneja los POST del juego
         //this.app.use('/games', gameRoutes);
         // respeusta si no encontrado
         this.app.use((req, res) => {

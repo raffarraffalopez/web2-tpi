@@ -3,12 +3,13 @@
     --color-primario-50: #007bff81;
     --color-secundario: #3498DB;
     --color-terciario: #80a6b3;
-    --color-ok: #41bb09ea;
+    --color-ok: #40D107;
     --color-ok-50: #41bb09d1;
+    --color-ok-80: rgba(38, 140, 3, 0.893);
     --color-red: #f51a0a;
     --color-red-50: #f51a0ae1;
     --color-over: #044875;
-    --color-contraste: rgba(82, 79, 79, 0.541);
+    --color-contraste: #1B1C1D;
     --logo-width: 5px;
 
 }
@@ -98,7 +99,7 @@ body {
 }
 
 .ok {
-    background-color: var(--color-ok-50);
+    background-color: var(--color-ok-80);
 
 }
 
@@ -120,14 +121,17 @@ body {
 
 }
 
-dialog {
-    width: 40vw;
+.aviso {
+    width: 30vw;
     max-width: 250px;
     max-height: 300px;
-    border-radius: 15px;
     border: 0;
-    height: 50vh;
-    z-index: 100;
+    border-radius: 15px;
+    height: 18vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--color-contraste);
 }
 
 
