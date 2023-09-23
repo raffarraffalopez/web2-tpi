@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="icon" type="image/ico" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style_3_4.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" async src="./assets/js/index.js"></script>
+    <title>Trivia WEB reload</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="nav">
+                <div class="content">
+                    <h1>WEB II Trivia </h1>
+                </div>
+                <div class="image" id="logo"></div>
+                <div class="puntaje" id="puntaje">
+                    <p class="badge ok" id="pts">0 Bien </sup>
+                    <p class="badge bad" id="mal">0 Mal </sup>
+                    <p class="badge ok" id="prom">0 Prom. </sup>
+                    <p class="badge ok" id="time">0 Total </sup>
+                </div>
+            </div>
+        </div>
+        <div class="main bkg-traslucido" id="main">
+            <button class="boton-inicio" value="jugar" id="jugar">Jugar</button>
+            <button class="boton-inicio" value="ranking" id="ranking">Ranking</button>
+            <!-- <button class="boton-inicio" value="login" id="login">LOGIN</button> -->
+        </div>
+        <div class="main bkg-traslucido invisible" id="juego">
+            <div class="container-pregunta">
+                <span class="box-shadow bkg-traslucido " id="juego-img"></span>
+                <span class="box-shadow bkg-traslucido " id="pregunta"></span>
+            </div>
+            <div><button class="blue-button box-shadow"></button></div>
+            <div><button class="blue-button box-shadow"></button></div>
+            <div><button class="blue-button box-shadow"></button></div>
+            <div><button class="blue-button box-shadow"></button></div>
+
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="menu">
+                    <a href="/">Inicio</a>
+                    <a href="https://rafalopez.ar" target="_blank">&copy; 2023 Rafa Lopez</a>
+                    <!-- <a href="/" id="contacto">Contacto</a> -->
+                    <a href="/" id="reinicio">Reiniciar</a>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+<dialog id="aviso-bien" class="aviso ok">
+    <h2>Genio</h2>
+    <h3>Esa es la correcta</h3>
+</dialog>
+<dialog id="aviso-mal" class="aviso bad">
+    <h2>Incorrecta</h2>
+    <h3 id="correcta"></h3>
+</dialog>
+<dialog id="aviso-ranking" class="aviso-resultado"></dialog>
+<dialog class="aviso-resultado" id="form-registro">
+    <h1>Resultado</h1>
+    <p id="correctas">Cor</p>
+    <p id="incorrectas">Inc</p>
+    <p id="promedio">Por</p>
+    <p id="tiempo">Tim</p>
+
+    <div>
+        <input type="text" id="nombre" name="nombre" value="" placeholder="Ingrese su nombre" autocomplete="off"
+            required pattern="[A-Za-z ]{3,}" title="Ingresa solo letras y espacios"></input>
+    </div>
+    </br>
+    <div>
+        <button type="button" class="blue-button box-shadow" id="registro">Enviar</button>
+    </div>
+    </br>
+    <div>
+        <button class="blue-button box-shadow" id="cancelar">Cancelar</button>
+    </div>
+    <!-- US5: Cuando termino de contestar las preguntas (10 en total), el sistema me brinda
+    información sobre la cantidad de preguntas respondidas correcta e incorrectamente, la
+    duración total de la partida y el tiempo promedio tardado en responder cada pregunta. -->
+</dialog>
+
+
+</html>

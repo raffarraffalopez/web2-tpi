@@ -1,39 +1,33 @@
 {
-  "name": "tp_i.v11",
+  "name": "deployfl0",
   "version": "1.0.0",
-  "description": "Trabajo Practico Integrador WEB 2 (2023)",
-  "main": "tpi.js",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "SET NODE_ENV=dev&& nodemon index.js",
-    "start:prod": "SET NODE_ENV=prod&& nodemon index.js",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.1",
+    "mysql2-promise": "^0.1.4",
     "nodemon": "^3.0.1",
     "pg": "^8.11.3",
     "pg-promise": "^11.5.4"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raffarraffa/tp_i.v11.git"
+    "url": "git+https://github.com/raffarraffa/webII.git"
   },
-  "keywords": [
-    "NODE",
-    "web2"
-  ],
-  "author": "Rafa Lopez",
+  "author": "rafa lopez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/raffarraffa/tp_i.v11/issues"
+    "url": "https://github.com/raffarraffa/webII/issues"
   },
-  "homepage": "https://github.com/raffarraffa/tp_i.v11#readme"
+  "homepage": "https://github.com/raffarraffa/webII#readme"
 }
