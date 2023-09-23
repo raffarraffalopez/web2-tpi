@@ -3,8 +3,8 @@ import debug from './utils.js';
 class Juego {
 
     constructor() {
-        // this.apiUrl = 'https://tuds-web2-dev.fl0.io';
-        this.apiUrl = `http://localhost:8090`;
+         this.apiUrl = 'https://tuds-web2-dev.fl0.io';
+//        this.apiUrl = `http://localhost:8090`;
         this.preguntas = false;
         this.indice = -1;
         this.respuestas = [];
