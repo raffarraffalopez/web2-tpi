@@ -5,7 +5,7 @@ import cors from 'cors';
 import { getPreguntas } from "./v1/controllers/main_src.js";
 const url = 'https://restcountries.com/v3.1/all';
 const tpi = express();
-const port = 8090;
+const port = 8080;
 //import mysql2 from 'mysql2';
 import mysql2 from 'mysql2/promise';
 const DEV = true;
