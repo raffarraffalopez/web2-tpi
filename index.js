@@ -8,7 +8,7 @@ const tpi = express();
 const port = 8080;
 //import mysql2 from 'mysql2';
 import mysql2 from 'mysql2/promise';
-const DEV = true;
+const DEV = false;
 const paises = await obtenerPaises(url);
 const corsOptions = {
   origin: ['https://rafa-lopez-web2-dev.fl0.io', 'http://localhost:8088', 'http://localhost:8080', 'http://localhost:*', 'http://127.0.0.1:*', '*'],
@@ -52,7 +52,6 @@ tpi.post(`/game`, (req, res) => {
   console.log(req.body);
   const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas)];
   guardarDB(dato);
-
   res.json({ mensaje: ` POST ${req.body.name} ` });
 });
 // ruta  archivo HTML default
