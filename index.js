@@ -27,7 +27,7 @@ tpi.use(cors(corsOptions));
 if (DEV) {
   tpi.use((req, res, next) => {
     res.header("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-    console.log(`Peticion ${req.method} ruta ${req.originalUrl} Sin cache`);
+ //   console.log(`Peticion ${req.method} ruta ${req.originalUrl} Sin cache`);
     next();
   });
 }
@@ -39,7 +39,7 @@ tpi.get(`/paises`, async (req, res) => {
   res.send(paises);
 });
 tpi.post(`/game`, (req, res) => {
-  console.log(req.body);
+ // console.log(req.body);
   const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas)];
   guardarDB(dato);
   res.json({ mensaje: ` POST ${req.body.name} ` });
@@ -62,9 +62,9 @@ tpi.get('/ranking', async (req, res) => {
 });
 tpi.post('/respuesta', (req, res) => {
   const rpt = req.body;
-  console.log(Object.values(paises[rpt.clave]).includes(rpt.respuesta));
-  console.log(`Peticion ${rpt.tipo}`);
-  console.log(paises[req.body.clave]);
+//  console.log(Object.values(paises[rpt.clave]).includes(rpt.respuesta));
+//  console.log(`Peticion ${rpt.tipo}`);
+//  console.log(paises[req.body.clave]);
   let resultado = {
     respuesta: Object.values(paises[rpt.clave]).includes(rpt.respuesta),
     pregunta: paises[req.body.clave]
@@ -74,7 +74,7 @@ tpi.post('/respuesta', (req, res) => {
 tpi.listen(port, () => {
   console.log(`Servidor Express en ejecución en http://localhost:${port}`);
 });
-ranking();
+//ranking();
 async function guardarDB(data) {
   try {
     const conn = await conexion.getConnection();
@@ -82,14 +82,14 @@ async function guardarDB(data) {
     const values = [data[0], data[1], data[2], data[3]];
     let [resultado] = await conn.execute(sql, values);
     conn.release();
-    console.log(`resultado ${resultado}`);
+//    console.log(`resultado ${resultado}`);
   }
   catch (err) {
     console.log(err);
   }
 }
 
-ranking();
+//ranking();
 async function ranking() {
   try {
     const conn = await conexion.getConnection();
