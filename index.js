@@ -40,7 +40,8 @@ tpi.get(`/paises`, async (req, res) => {
 });
 tpi.post(`/game`, (req, res) => {
  // console.log(req.body);
-  const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas),req.ip];
+let ipUser=req.connection.remoteAddress;
+  const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas),ipUser];
   guardarDB(dato);
   res.json({ mensaje: ` POST ${req.body.name} ` });
 });
