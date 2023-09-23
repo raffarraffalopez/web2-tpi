@@ -15,22 +15,12 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   optionsSuccessStatus: 204,
 };
-
-//const conn = mysql2.createConnection({
 const conexion = mysql2.createPool({
   host: 'mysql-raffarraffa.alwaysdata.net',
   user: '321087_rafa',
   database: 'raffarraffa_web2',
   password: 'Web_2_20230'
 });
-// const conn = mysql2.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   database: 'tp_web2',
-//   password: ''
-// });
-
-
 tpi.use(compression());
 tpi.use(express.json());
 tpi.use(cors(corsOptions));
