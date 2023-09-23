@@ -13,7 +13,7 @@ async function generarRanking() {
     tb += '<div><table><tr><th>Pos</th><th>Nombre</th><th>Puntos</th><th>Tiempo</th></tr>';
     ranking.forEach(element => {
         count++;
-        tb += `<tr><td>${count}</td><td>${element.name}</td><td>${element.point}</td><td>${(element.time / 100).toFixed(2)}</td></tr>`;
+        tb += `<tr><td>${count}</td><td>${element.name}</td><td>${element.point}</td><td>${(element.time / 1000).toFixed(2)}</td></tr>`;
     });
     tb += '</table></div>';
     avisoRanking.innerHTML += tb;
