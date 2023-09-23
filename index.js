@@ -40,8 +40,7 @@ tpi.get(`/paises`, async (req, res) => {
 });
 tpi.post(`/game`, (req, res) => {
  // console.log(req.body);
-let ipUser=req.connection.remoteAddress;
-  const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas),ipUser];
+  const dato = [req.body.name, req.body.puntosTotal, req.body.tiempoTotal, JSON.stringify(req.body.preguntas)];
   guardarDB(dato);
   res.json({ mensaje: ` POST ${req.body.name} ` });
 });
@@ -79,7 +78,7 @@ tpi.listen(port, () => {
 async function guardarDB(data) {
   try {
     const conn = await conexion.getConnection();
-    const sql = 'INSERT INTO `partida` (`id`, `name`,`point`, `time`, `preguntas`,`ip`) VALUES (NULL, ?, ?, ?,?,?)';
+    const sql = 'INSERT INTO `partida` (`id`, `name`,`point`, `time`, `preguntas`) VALUES (NULL, ?, ?, ?,?)';
     const values = [data[0], data[1], data[2], data[3]];
     let [resultado] = await conn.execute(sql, values);
     conn.release();
