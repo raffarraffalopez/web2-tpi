@@ -71,7 +71,7 @@ class Juego {
             redirect: 'follow'
         };
 
-        fetch("localhost:8090/game", requestOptions)
+        fetch(`${this.apiUrl}/game`, requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .then(re)
