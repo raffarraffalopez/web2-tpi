@@ -89,7 +89,7 @@ class Juego {
 
         try {
             // Debes usar "await" para esperar a que la solicitud fetch se complete.
-            const response = await fetch('http://localhost:8090/game', requestOptions);
+            const response = await fetch(`${this.apiUrl}/game`, requestOptions);
 
             if (!response.ok) {
                 throw new Error('La solicitud no pudo completarse correctamente.');
