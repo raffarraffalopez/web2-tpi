@@ -101,7 +101,7 @@ function game() {
             setTimeout(() => {
                 dialogoAvisoMal.close();
                 correrRonda();
-            }, 1000);
+            }, 2000);
         }
         const userRespuesta = {
             pregunta: preguntas[count],
