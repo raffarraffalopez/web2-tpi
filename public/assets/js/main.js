@@ -201,6 +201,8 @@ function game() {
     function setBoton(setValue) {
         for (let j = 0; j < juegoBotones.length; j++) {
             juegoBotones[j].disabled = setValue;
+            juegoBotones[j].classList.add('no-hover');
+            
         }
     }
     function formularioRegistroLLenado() {
